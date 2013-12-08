@@ -11,7 +11,7 @@ To use in your project, simply link to the `bibleRef.js` file in your `<head>`, 
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.js"></script>
+	<script src="bibleRef.min.js"></script>
 	<script>
 		bibleRef = {};
 	</script>
@@ -22,7 +22,7 @@ With this default configuration, the source of the Bible reference links will be
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.js"></script>
+	<script src="bibleRef.min.js"></script>
 	<script>
 		bibleRef = {
 			src: 'biblegateway'
@@ -35,7 +35,7 @@ The default version for the `'biblegateway'` configuration is NIV, but you are f
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.js"></script>
+	<script src="bibleRef.min.js"></script>
 	<script>
 		bibleRef = {
 			src: 'biblegateway',

@@ -29,14 +29,12 @@ $(document).ready(function(){
 	}
 
 	refs = document.body.innerHTML.match(/(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)\s\d+(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig);
-
+	
 	for (i in refs) {
 		j = refs[i];
 		if (j) {
 			k = new RegExp(j, "g");
-			$('html > *:contains("'+j+'")').each(function(){
-				$(this).html($(this).html().replace(k, "<a data-bible-ref href='"+ (src === 'esvbible' ? esvbibleURL(j) : src === 'biblegateway' ? biblegatewayURL(j) : esvbibleURL(j)) +"'>"+j+"</a>"));
-			})
+			$('body').html($('body').html().replace(k, "<a data-bible-ref href='"+ (src === 'esvbible' ? esvbibleURL(j) : src === 'biblegateway' ? biblegatewayURL(j) : esvbibleURL(j)) +"'>"+j+"</a>"));
 		}
 	}
 });

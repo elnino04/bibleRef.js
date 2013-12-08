@@ -5,7 +5,7 @@ $(document).ready(function(){
 		if (j) {
 			k = new RegExp(j, "g")
 			$('html > *:contains("'+j+'")').each(function(){
-				$(this).html($(this).html().replace(k, "&lt;BIBLE REF&gt;"));
+				$(this).html($(this).html().replace(k, "<a href='http://www.esvbible.org/"+j.replace(/\s/, '+')+"'>"+j+"</a>"));
 			})
 		}
 	}

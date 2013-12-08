@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v1.0.6 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.0.7 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2013 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -28,7 +28,7 @@ $(document).ready(function(){
 		return "http://www.biblegateway.com/passage/?search="+p.replace(/\s/g, '%20')+"&version="+version;
 	}
 
-	refs = document.body.innerHTML.match(/(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)\s\d+(:\d+)?(\-\d+)?(:\d+)?(\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?/ig);
+	refs = document.body.innerHTML.match(/(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)\s\d+(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig);
 
 	for (i in refs) {
 		j = refs[i];

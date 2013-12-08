@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v1.0.7 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.1 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2013 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -33,7 +33,7 @@ $(document).ready(function(){
 	for (i in refs) {
 		j = refs[i];
 		if (j) {
-			k = new RegExp(j, "g");
+			k = new RegExp(j+"(?!\\,\\s\\d+(:\\d+)?)", "g");
 			$('body').html($('body').html().replace(k, "<a data-bible-ref href='"+ (src === 'esvbible' ? esvbibleURL(j) : src === 'biblegateway' ? biblegatewayURL(j) : esvbibleURL(j)) +"'>"+j+"</a>"));
 		}
 	}

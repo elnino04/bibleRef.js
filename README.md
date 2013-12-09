@@ -57,7 +57,7 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 	</script>
 ```
 
-You may set 'bibleRef.range' to only search a specific `id` in a webpage (note: must be an `id` [without the leading `#`], **not** a `class` - no class support at this time).
+You may set `bibleRef.range` to only search a specific `id` in a webpage (note: must be an `id` [without the leading `#`], **not** a `class` - no class support at this time):
 
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 

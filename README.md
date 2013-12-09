@@ -57,6 +57,19 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 	</script>
 ```
 
+You may set 'bibleRef.range' to only search a specific `id` in a webpage (note: must be an `id` [without the leading `#`], **not** a `class` - no class support at this time).
+
+```
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<!-- Must have jQuery library defined first -->
+	<script src="bibleRef.min.js"></script>
+	<script>
+		bibleRef = {
+			range: 'myID'
+		};
+	</script>
+```
+
 ##Contributing
 
 If you find a bug, or would like to help out with development, just follow some simple steps:

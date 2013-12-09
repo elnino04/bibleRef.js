@@ -44,7 +44,7 @@ The default version for the `'biblegateway'` configuration is NIV, but you are f
 	</script>
 ```
 
-You are also able to configure the `target` of the `<a>`s that bibleRef generates by setting `bibleRef.target` to your desired setting (the default is `'_self'`:
+You are also able to configure the `target` of the `<a>`s that bibleRef generates by setting `bibleRef.target` to your desired setting (the default is `'_self'`):
 
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 

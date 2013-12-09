@@ -1,17 +1,20 @@
 /*!
- * bibleRef.js v1.1.2 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.1.3 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2013 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
 $(document).ready(function(){
 	// Declare all variables
-	var src, target, range, version, refs, selector, esv, bg, url;
+	var src, target, range, class, version, refs, selector, esv, bg, url;
 
 	// Set source to default to esvbible if it is not already set to biblegateway
 	src = bibleRef && bibleRef.src === 'biblegateway' ? 'biblegateway' : 'esvbible';
 
 	// Set target to default to _self if not already defined
 	target = bibleRef && bibleRef.target !== '_self' ? bibleRef.target : '_self';
+
+	// Set class to empty string if bibleRef.class is not defined
+	class = bibleRef && bibleRef.class ? bibleRef.class : '';
 
 	// Set range to default to body if not already defined
 	range = bibleRef && bibleRef.range !== 'body' ? bibleRef.range : 'body';
@@ -51,7 +54,7 @@ $(document).ready(function(){
 			k = new RegExp(j + "(?!\\,\\s\\d+(:\\d+)?)", "g");
 
 			// Replaces all occurrences of the reference with the appropriate link
-			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + ">" + j + "</a>"));
+			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + " class='" + class + "'>" + j + "</a>"));
 		}
 	}
 });

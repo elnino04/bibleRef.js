@@ -6,7 +6,7 @@ Javascript script to detect Bible references and link to a website where they ma
 
 ##Usage
 
-To use in your project, simply link to the `bibleRef.js` file in your `<head>`, and define the `bibleRef` variable as an empty object to initiate bibleRef.js:
+To use in your project, simply link to the `bibleRef.min.js` file in your `<head>`, and define the `bibleRef` variable as an empty object to initiate bibleRef.js:
 
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 

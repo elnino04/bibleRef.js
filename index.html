@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>bibleRef.js by JoahG</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>bibleRef.js</h1>
+        <p>Javascript script to detect Bible references and link to a website where they may be read online.</p>
+
+        <p class="view"><a href="https://github.com/JoahG/bibleRef.js">View the Project on GitHub <small>JoahG/bibleRef.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/JoahG/bibleRef.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JoahG/bibleRef.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JoahG/bibleRef.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="biblerefjs" class="anchor" href="#biblerefjs"><span class="octicon octicon-link"></span></a>bibleRef.js</h1>
+
+<p>Javascript script to detect Bible references and link to a website where they may be read online.</p>
+
+<hr><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To use in your project, simply link to the <code>bibleRef.min.js</code> file in your <code>&lt;head&gt;</code>, and define the <code>bibleRef</code> variable as an empty object to initiate bibleRef.js:</p>
+
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+    &lt;!-- Must have jQuery library defined first --&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        bibleRef = {};
+    &lt;/script&gt;
+</code></pre>
+
+<p>With this default configuration, the source of the Bible reference links will be to <a href="http://www.esvbible.org/">esvbible.org</a>. bibleRef.js is also preconfigured to also handle reference links to <a href="http://www.biblegateway.com/">biblegateway.com</a> by setting <code>bibleRef.src</code> to <code>'biblegateway'</code>:</p>
+
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+    &lt;!-- Must have jQuery library defined first --&gt;
+    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        bibleRef = {
+            src: 'biblegateway'
+        };
+    &lt;/script&gt;
+</code></pre>
+
+<p>The default version for the <code>'biblegateway'</code> configuration is NIV, but you are free to specify whatever verion you would like by setting the <code>bibleRef.version</code> to your desired version:</p>
+
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+    &lt;!-- Must have jQuery library defined first --&gt;
+    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        bibleRef = {
+            src: 'biblegateway',
+            version: 'KJV'
+        };
+    &lt;/script&gt;
+</code></pre>
+
+<p>You are also able to configure the <code>target</code> of the <code>&lt;a&gt;</code>s that bibleRef generates by setting <code>bibleRef.target</code> to your desired setting (the default is <code>'_self'</code>):</p>
+
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+    &lt;!-- Must have jQuery library defined first --&gt;
+    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        bibleRef = {
+            target: '_blank'
+        };
+    &lt;/script&gt;
+</code></pre>
+
+<p>You may set <code>bibleRef.range</code> to only search a specific <code>id</code> in a webpage (note: must be an <code>id</code> [without the leading <code>#</code>], <strong>not</strong> a <code>class</code> - no class support at this time):</p>
+
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+    &lt;!-- Must have jQuery library defined first --&gt;
+    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        bibleRef = {
+            range: 'myID'
+        };
+    &lt;/script&gt;
+</code></pre>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>If you find a bug, or would like to help out with development, just follow some simple steps:</p>
+
+<ol>
+<li><a href="https://github.com/JoahG/bibleRef.js/issues/new">Make an issue.</a></li>
+<li><a href="https://github.com/JoahG/bibleRef.js/fork">Fork the repo.</a></li>
+<li>Make your changes.</li>
+<li>Commit and create a pull request.</li>
+</ol><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>bibleRef.js is written and maintained by <a href="http://www.joahg.com">Joah Gerstenberg</a>, copyright 2013. All code contained within these files are licensed under an <a href="https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE">MIT license</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JoahG">JoahG</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

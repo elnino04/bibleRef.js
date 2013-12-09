@@ -1,11 +1,10 @@
 /*!
- * bibleRef.js v1.1 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.1.1 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2013 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
 $(document).ready(function(){
-	var src;
-	var version;
+	var src, version, target;
 
 	if (bibleRef && bibleRef.src === 'biblegateway') {
 		src = 'biblegateway';
@@ -14,7 +13,11 @@ $(document).ready(function(){
 		} else {
 			version = 'NIV';
 		}
-	} 
+	}
+
+	if (bibleRef && bibleRef.target !== '_self') {
+		target = bibleRef.target;
+	}
 
 	if (bibleRef.src === 'esvbible' || !src) {
 		src = 'esvbible';
@@ -34,7 +37,7 @@ $(document).ready(function(){
 		j = refs[i];
 		if (j) {
 			k = new RegExp(j+"(?!\\,\\s\\d+(:\\d+)?)", "g");
-			$('body').html($('body').html().replace(k, "<a data-bible-ref href='"+ (src === 'esvbible' ? esvbibleURL(j) : src === 'biblegateway' ? biblegatewayURL(j) : esvbibleURL(j)) +"'>"+j+"</a>"));
+			$('body').html($('body').html().replace(k, "<a data-bible-ref href='"+ (src === 'esvbible' ? esvbibleURL(j) : src === 'biblegateway' ? biblegatewayURL(j) : esvbibleURL(j)) +"' target="+ (target ? target : '_self') +">"+j+"</a>"));
 		}
 	}
 });

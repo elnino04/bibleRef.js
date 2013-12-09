@@ -6,6 +6,8 @@ Javascript script to detect Bible references and link to a website where they ma
 
 ##Usage
 
+####Initialization
+
 To use in your project, simply link to the `bibleRef.min.js` file in your `<head>`, and define the `bibleRef` variable as an empty object to initiate bibleRef.js:
 
 ```
@@ -68,6 +70,35 @@ You may set `bibleRef.range` to only search a specific `id` in a webpage (note: 
 			range: 'myID'
 		};
 	</script>
+```
+
+Setting `bibleRef.class` allows you to put a custom `class` on all Bible references that bibleRef replaces.
+
+```
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
+	<!-- Must have jQuery library defined first -->
+	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script>
+		bibleRef = {
+			class: 'myClass'
+		};
+	</script>
+```
+
+####Translation
+
+After bibleRef.js is initialized, it will search for all references in the range you provided. When it finds a reference, it will replace it with a link to the source you provided in the form:
+
+```
+	<a data-bible-ref href="...">bookName x:y</a>
+```
+
+Note that all Bible reference links will have the `data-bible-ref` attribute for easy targeting.
+
+If you have set a custom class with `bibleRef.class`, it will be applied to the `a`s as well:
+
+```
+	<a data-bible-ref href="..." class="customClass">bookName x:y</a>
 ```
 
 ##Contributing

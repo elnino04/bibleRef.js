@@ -9,9 +9,9 @@ Javascript script to detect Bible references and link to a website where they ma
 To use in your project, simply link to the `bibleRef.min.js` file in your `<head>`, and define the `bibleRef` variable as an empty object to initiate bibleRef.js:
 
 ```
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.min.js"></script>
+	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {};
 	</script>
@@ -20,9 +20,9 @@ To use in your project, simply link to the `bibleRef.min.js` file in your `<head
 With this default configuration, the source of the Bible reference links will be to [esvbible.org](http://www.esvbible.org/). bibleRef.js is also preconfigured to also handle reference links to [biblegateway.com](http://www.biblegateway.com/) by setting `bibleRef.src` to `'biblegateway'`:
 
 ```
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.min.js"></script>
+	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			src: 'biblegateway'
@@ -33,9 +33,9 @@ With this default configuration, the source of the Bible reference links will be
 The default version for the `'biblegateway'` configuration is NIV, but you are free to specify whatever verion you would like by setting the `bibleRef.version` to your desired version:
 
 ```
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.min.js"></script>
+	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			src: 'biblegateway',
@@ -47,9 +47,9 @@ The default version for the `'biblegateway'` configuration is NIV, but you are f
 You are also able to configure the `target` of the `<a>`s that bibleRef generates by setting `bibleRef.target` to your desired setting (the default is `'_self'`):
 
 ```
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.min.js"></script>
+	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			target: '_blank'
@@ -60,9 +60,9 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 You may set `bibleRef.range` to only search a specific `id` in a webpage (note: must be an `id` [without the leading `#`], **not** a `class` - no class support at this time):
 
 ```
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="bibleRef.min.js"></script>
+	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			range: 'myID'

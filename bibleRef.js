@@ -27,12 +27,12 @@ $(document).ready(function(){
 
 	// Set esv to function returning esvbible.org Bible ref URL
 	esv = function(p) {
-		return "http://www.esvbible.org/"+p.replace(/\s/g, '+');
+		return "http://www.esvbible.org/" + p.replace(/\s/g, '+');
 	}
 
 	// Set bg to function returning biblegateway.com Bible ref URL
 	bg = function(p) {
-		return "http://www.biblegateway.com/passage/?search="+p.replace(/\s/g, '%20')+"&version="+version;
+		return "http://www.biblegateway.com/passage/?search=" + p.replace(/\s/g, '%20') + "&version=" + version;
 	}
 
 	// Set url to return appropriate url according to src setting
@@ -48,7 +48,7 @@ $(document).ready(function(){
 		if (j) {
 
 			// Create a new Regex to check for another trailing reference 
-			k = new RegExp(j+"(?!\\,\\s\\d+(:\\d+)?)", "g");
+			k = new RegExp(j + "(?!\\,\\s\\d+(:\\d+)?)", "g");
 
 			// Replaces all occurrences of the reference with the appropriate link
 			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + ">" + j + "</a>"));

@@ -36,6 +36,9 @@
 <hr><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
+<h4>
+<a name="initialization" class="anchor" href="#initialization"><span class="octicon octicon-link"></span></a>Initialization</h4>
+
 <p>To use in your project, simply link to the <code>bibleRef.min.js</code> file in your <code>&lt;head&gt;</code>, and define the <code>bibleRef</code> variable as an empty object to initiate bibleRef.js:</p>
 
 <pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
@@ -93,6 +96,33 @@
             range: 'myID'
         };
     &lt;/script&gt;
+</code></pre>
+
+<p>Setting <code>bibleRef.class</code> allows you to put a custom <code>class</code> on all Bible references that bibleRef replaces.</p>
+
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
+    &lt;!-- Must have jQuery library defined first --&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        bibleRef = {
+            class: 'myClass'
+        };
+    &lt;/script&gt;
+</code></pre>
+
+<h4>
+<a name="translation" class="anchor" href="#translation"><span class="octicon octicon-link"></span></a>Translation</h4>
+
+<p>After bibleRef.js is initialized, it will search for all references in the range you provided. When it finds a reference, it will replace it with a link to the source you provided in the form:</p>
+
+<pre><code>    &lt;a data-bible-ref href="..."&gt;bookName x:y&lt;/a&gt;
+</code></pre>
+
+<p>Note that all Bible reference links will have the <code>data-bible-ref</code> attribute for easy targeting.</p>
+
+<p>If you have set a custom class with <code>bibleRef.class</code>, it will be applied to the <code>a</code>s as well:</p>
+
+<pre><code>    &lt;a data-bible-ref href="..." class="customClass"&gt;bookName x:y&lt;/a&gt;
 </code></pre>
 
 <h2>

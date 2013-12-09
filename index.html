@@ -38,9 +38,9 @@
 
 <p>To use in your project, simply link to the <code>bibleRef.min.js</code> file in your <code>&lt;head&gt;</code>, and define the <code>bibleRef</code> variable as an empty object to initiate bibleRef.js:</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
     &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
     &lt;script&gt;
         bibleRef = {};
     &lt;/script&gt;
@@ -48,9 +48,9 @@
 
 <p>With this default configuration, the source of the Bible reference links will be to <a href="http://www.esvbible.org/">esvbible.org</a>. bibleRef.js is also preconfigured to also handle reference links to <a href="http://www.biblegateway.com/">biblegateway.com</a> by setting <code>bibleRef.src</code> to <code>'biblegateway'</code>:</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
     &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
     &lt;script&gt;
         bibleRef = {
             src: 'biblegateway'
@@ -60,9 +60,9 @@
 
 <p>The default version for the <code>'biblegateway'</code> configuration is NIV, but you are free to specify whatever verion you would like by setting the <code>bibleRef.version</code> to your desired version:</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
     &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
     &lt;script&gt;
         bibleRef = {
             src: 'biblegateway',
@@ -73,9 +73,9 @@
 
 <p>You are also able to configure the <code>target</code> of the <code>&lt;a&gt;</code>s that bibleRef generates by setting <code>bibleRef.target</code> to your desired setting (the default is <code>'_self'</code>):</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
     &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
     &lt;script&gt;
         bibleRef = {
             target: '_blank'
@@ -85,9 +85,9 @@
 
 <p>You may set <code>bibleRef.range</code> to only search a specific <code>id</code> in a webpage (note: must be an <code>id</code> [without the leading <code>#</code>], <strong>not</strong> a <code>class</code> - no class support at this time):</p>
 
-<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt; 
+<pre><code>    &lt;script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"&gt;&lt;/script&gt; 
     &lt;!-- Must have jQuery library defined first --&gt;
-    &lt;script src="bibleRef.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"&gt;&lt;/script&gt;
     &lt;script&gt;
         bibleRef = {
             range: 'myID'
@@ -116,6 +116,16 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-45765973-6");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>

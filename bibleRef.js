@@ -51,10 +51,10 @@ $(document).ready(function(){
 		if (_j) {
 
 			// Create a new Regex to check for another trailing reference 
-			k = new RegExp(_j + "(?!\\,\\s\\d+(:\\d+)?)", "g");
+			_k = new RegExp(_j + "(?!\\,\\s\\d+(:\\d+)?)", "g");
 
 			// Replaces all occurrences of the reference with the appropriate link
-			$(_selector).html($(_selector).html().replace(k, "<a data-bible-ref href='" + _url(_j) + "' target=" + _target + " class='" + _class + "'>" + _j + "</a>"));
+			$(_selector).html($(_selector).html().replace(_k, "<a data-bible-ref href='" + _url(_j) + "' target=" + _target + " class='" + _class + "'>" + _j + "</a>"));
 		}
 	}
 });

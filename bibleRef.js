@@ -14,7 +14,7 @@ $(document).ready(function(){
 	_target = bibleRef && bibleRef.target !== '_self' ? bibleRef.target : '_self';
 
 	// Set class to empty string if bibleRef.class is not defined
-	class_ = bibleRef && bibleRef.class ? bibleRef.class : '';
+	_class = bibleRef && bibleRef.class ? bibleRef.class : '';
 
 	// Set _range to default to body if not already defined
 	_range = bibleRef && bibleRef.range !== 'body' ? bibleRef.range : 'body';

@@ -1,11 +1,11 @@
 /*!
- * bibleRef.js v1.1.3 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.1.4 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2013 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
 $(document).ready(function(){
 	// Declare all variables
-	var src, target, range, class, version, refs, selector, esv, bg, url;
+	var src, target, range, class_, version, refs, selector, esv, bg, url;
 
 	// Set source to default to esvbible if it is not already set to biblegateway
 	src = bibleRef && bibleRef.src === 'biblegateway' ? 'biblegateway' : 'esvbible';
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	target = bibleRef && bibleRef.target !== '_self' ? bibleRef.target : '_self';
 
 	// Set class to empty string if bibleRef.class is not defined
-	class = bibleRef && bibleRef.class ? bibleRef.class : '';
+	class_ = bibleRef && bibleRef.class ? bibleRef.class : '';
 
 	// Set range to default to body if not already defined
 	range = bibleRef && bibleRef.range !== 'body' ? bibleRef.range : 'body';
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	version = bibleRef && bibleRef.version ? bibleRef.version : 'NIV';
 
 	// Collect all Bible references in [range]
-	refs = (range ? document.getElementById(range) : document.body).innerHTML.match(/(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)\s\d+(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig);
+	refs = (range ? document.getElementById(range) : document.body).innerHTML.match(/(\d+\s)?((I*)+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)\s\d+(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig);
 	
 	// Set selector to default to body if range is not defined.
 	selector = range ? '#' + range : 'body';
@@ -54,7 +54,7 @@ $(document).ready(function(){
 			k = new RegExp(j + "(?!\\,\\s\\d+(:\\d+)?)", "g");
 
 			// Replaces all occurrences of the reference with the appropriate link
-			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + " class='" + class + "'>" + j + "</a>"));
+			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + " class='" + class_ + "'>" + j + "</a>"));
 		}
 	}
 });

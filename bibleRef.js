@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v1.1.4 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.1.5 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2013 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */

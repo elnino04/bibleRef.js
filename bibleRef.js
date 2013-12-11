@@ -5,7 +5,7 @@
  */
 $(document).ready(function(){
 	// Declare all variables
-	var src, target, range, class, version, refs, selector, esv, bg, url;
+	var src, target, range, class_, version, refs, selector, esv, bg, url;
 
 	// Set source to default to esvbible if it is not already set to biblegateway
 	src = bibleRef && bibleRef.src === 'biblegateway' ? 'biblegateway' : 'esvbible';
@@ -14,7 +14,7 @@ $(document).ready(function(){
 	target = bibleRef && bibleRef.target !== '_self' ? bibleRef.target : '_self';
 
 	// Set class to empty string if bibleRef.class is not defined
-	class = bibleRef && bibleRef.class ? bibleRef.class : '';
+	class_ = bibleRef && bibleRef.class ? bibleRef.class : '';
 
 	// Set range to default to body if not already defined
 	range = bibleRef && bibleRef.range !== 'body' ? bibleRef.range : 'body';
@@ -54,7 +54,7 @@ $(document).ready(function(){
 			k = new RegExp(j + "(?!\\,\\s\\d+(:\\d+)?)", "g");
 
 			// Replaces all occurrences of the reference with the appropriate link
-			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + " class='" + class + "'>" + j + "</a>"));
+			$(selector).html($(selector).html().replace(k, "<a data-bible-ref href='" + url(j) + "' target=" + target + " class='" + class_ + "'>" + j + "</a>"));
 		}
 	}
 });

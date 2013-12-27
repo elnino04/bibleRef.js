@@ -13,7 +13,7 @@ To use in your project, simply link to the `bibleRef.min.js` file in your `<head
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {};
 	</script>
@@ -24,7 +24,7 @@ With this default configuration, the source of the Bible reference links will be
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			src: 'biblegateway'
@@ -37,7 +37,7 @@ The default version for the `'biblegateway'` configuration is NIV, but you are f
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			src: 'biblegateway',
@@ -51,7 +51,7 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			target: '_blank'
@@ -64,7 +64,7 @@ You may set `bibleRef.range` to only search a specific `id` in a webpage (note: 
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			range: 'myID'
@@ -77,7 +77,7 @@ Setting `bibleRef.class` allows you to put a custom `class` on all Bible referen
 ```
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
 	<!-- Must have jQuery library defined first -->
-	<script src="http://git.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
 			class: 'myClass'

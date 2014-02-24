@@ -1,5 +1,5 @@
 /*!
- * bibleRef.js v1.1.6 (https://github.com/JoahG/bibleRef.js)
+ * bibleRef.js v1.1.7 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/bibleRef.js/blob/master/MIT-LICENSE)
  */
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	_version = bibleRef && bibleRef.version ? bibleRef.version : 'NIV';
 
 	// Collect all Bible references in [_range]
-	_refs = (_range ? document.getElementById(_range) : document.body).innerHTML.match(/(I+\s)?(\d\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)\s\d+(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig);
+	_refs = (_range ? document.getElementById(_range) : document.body).innerHTML.match(/(I+\s)?(\d\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|samuel|kings|chronicles|ruth|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song of solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)(\s\d+)?(:\d+)?(\-\d+)?(:\d+)?((\,\s\d+)?(:\d+)?(\-\d+)?(:\d+)?)*/ig);
 	
 	// Set _selector to default to body if _range is not defined.
 	_selector = _range ? '#' + _range : 'body';

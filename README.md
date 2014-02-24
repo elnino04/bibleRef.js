@@ -59,7 +59,7 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 	</script>
 ```
 
-You may set `bibleRef.range` to only search a specific `id` in a webpage (note: must be an `id` [without the leading `#`], **not** a `class` - no class support at this time):
+`bibleRef.range` may be set to only search a specific area of a webpage. `bibleRef.range` may be set as any selector recognizable by jQuery (i.e. any combination of `id`, `class`, element name, pseudoselectors, etc.). `bibleRef.range` defaults to `body`.
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
@@ -67,7 +67,7 @@ You may set `bibleRef.range` to only search a specific `id` in a webpage (note: 
 	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
 	<script>
 		bibleRef = {
-			range: 'myID'
+			range: '#myID, .myClass:first-child'
 		};
 	</script>
 ```

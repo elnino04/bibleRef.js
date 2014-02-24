@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 	// Set _bg to function returning biblegateway.com Bible ref URL
 	_bg = function(_p) {
-		return "http://www.biblegateway.com/passage/?search=" + _p.replace(/\s/g, '%20') + "&_version=" + _version;
+		return "http://www.biblegateway.com/passage/?search=" + _p.replace(/\s/g, '%20') + "&version=" + _version;
 	}
 
 	// Set _url to return appropriate _url according to _src setting

@@ -19,6 +19,8 @@ To use in your project, simply link to the `bibleRef.min.js` file in your `<head
 	</script>
 ```
 
+######`bibleRef.src`
+
 With this default configuration, the source of the Bible reference links will be to [esvbible.org](http://www.esvbible.org/). bibleRef.js is also preconfigured to also handle reference links to [biblegateway.com](http://www.biblegateway.com/) by setting `bibleRef.src` to `'biblegateway'`:
 
 ```html
@@ -31,6 +33,8 @@ With this default configuration, the source of the Bible reference links will be
 		};
 	</script>
 ```
+
+######`bibleRef.version`
 
 The default version for the `'biblegateway'` configuration is NIV, but you are free to specify whatever verion you would like by setting the `bibleRef.version` to your desired version:
 
@@ -46,6 +50,8 @@ The default version for the `'biblegateway'` configuration is NIV, but you are f
 	</script>
 ```
 
+######`bibleRef.targer`
+
 You are also able to configure the `target` of the `<a>`s that bibleRef generates by setting `bibleRef.target` to your desired setting (the default is `'_self'`):
 
 ```html
@@ -58,6 +64,8 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 		};
 	</script>
 ```
+
+######`bibleRef.range`
 
 `bibleRef.range` may be set to only search a specific area of a webpage. `bibleRef.range` may be set as any selector recognizable by jQuery (i.e. any combination of `id`, `class`, element name, pseudoselectors, etc.). `bibleRef.range` defaults to `body`.
 
@@ -72,6 +80,8 @@ You are also able to configure the `target` of the `<a>`s that bibleRef generate
 	</script>
 ```
 
+######`bibleRef.class`
+
 Setting `bibleRef.class` allows you to put a custom `class` on all Bible references that bibleRef replaces.
 
 ```html
@@ -81,6 +91,21 @@ Setting `bibleRef.class` allows you to put a custom `class` on all Bible referen
 	<script>
 		bibleRef = {
 			class: 'myClass'
+		};
+	</script>
+```
+
+######`bibleRef.abbr`
+
+`bibleRef.js` also supports Bible book abbreviations. For false case prevention purposes, abbreviations are turned **off** by default. To turn abbreviation searching/replacement, set `bibleRef.abbr` to `true`. (Defaults to `false`).
+
+```html
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
+	<!-- Must have jQuery library defined first -->
+	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script>
+		bibleRef = {
+			abbr: true
 		};
 	</script>
 ```

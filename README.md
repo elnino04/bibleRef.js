@@ -19,9 +19,11 @@ To use in your project, simply link to the `bibleRef.min.js` file in your `<head
 	</script>
 ```
 
+####Configuration
+
 ######`bibleRef.src`
 
-With this default configuration, the source of the Bible reference links will be to [esvbible.org](http://www.esvbible.org/). bibleRef.js is also preconfigured to also handle reference links to [biblegateway.com](http://www.biblegateway.com/) by setting `bibleRef.src` to `'biblegateway'`:
+With the default configuration, the source of the Bible reference links will be to [esvbible.org](http://www.esvbible.org/). bibleRef.js is also preconfigured to also handle reference links to [biblegateway.com](http://www.biblegateway.com/) by setting `bibleRef.src` to `'biblegateway'`:
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 

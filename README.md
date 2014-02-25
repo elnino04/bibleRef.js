@@ -99,7 +99,7 @@ Setting `bibleRef.class` allows you to put a custom `class` on all Bible referen
 
 ######`bibleRef.abbr`
 
-`bibleRef.js` also supports Bible book abbreviations. For false case prevention purposes, abbreviations are turned **off** by default. To turn abbreviation searching/replacement, set `bibleRef.abbr` to `true`. (Defaults to `false`).
+`bibleRef.js` also supports Bible book abbreviations. For false case prevention purposes, abbreviations are turned **off** by default. To turn abbreviation searching/replacement on, set `bibleRef.abbr` to `true`. (Defaults to `false`).
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 

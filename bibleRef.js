@@ -20,7 +20,7 @@ $(document).ready(function(){
 	_range = bibleRef && bibleRef.range ? bibleRef.range : 'body';
 
 	// Set _version to default to NIV if not already defined
-	_version = bibleRef && bibleRef.version ? bibleRef.version : 'NIV';	
+	_version = bibleRef && bibleRef.version ? bibleRef.version : 'NIV';
 
 	// Set _abbr to default to false if not already defined
 	_abbr = bibleRef && bibleRef.abbr ? bibleRef.abbr : false;
@@ -28,17 +28,17 @@ $(document).ready(function(){
 	// Set _esv to function returning esvbible.org Bible ref URL
 	_esv = function(_p) {
 		return "http://www.esvbible.org/" + _p.replace(/\s/g, '+');
-	}
+	};
 
 	// Set _bg to function returning biblegateway.com Bible ref URL
 	_bg = function(_p) {
 		return "http://www.biblegateway.com/passage/?search=" + _p.replace(/\s/g, '%20') + "&version=" + _version;
-	}
+	};
 
 	// Set _url to return appropriate url according to _src setting
 	_url = function(_p) {
 		return _src === '_esv' ? _esv(_p) : _src === 'biblegateway' ? _bg(_p) : _esv(_p);
-	}
+	};
 
 	// Search for references in _range HTML, and replace them with the <a> link.
 	$(_range).html($(_range).html().replace(/(I+\s)?(\d+\s)?(genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|samuel|kings|chronicles|ezra|nehemiah|esther|job|psalm|psalms|proverbs|ecclesiastes|song\sof\ssolomon|song\sof\ssongs|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|corinthians|galatians|ephesians|philippians|colossians|thessalonians|timothy|titus|philemon|hebrews|james|peter|jude|revelation)(\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?((\,\s?\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?)*/ig, function(_match) {

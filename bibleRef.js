@@ -24,5 +24,3 @@
 		if ($scope.abbr) { $($scope.range).html($($scope.range).html().replace(/\s(gen|ge|gn|ex|exod|lev|le|lv|num|nu|nm|nb|deut|dt|josh|jos|jsh|jdg|jg|jdgs|rth|ru|(I+|\d+)\ssam|(I+|\d+)\ssa|\d+kgs|\d+chron|ezr|neh|ne|esth|es|jb|pslm|ps|psa|psm|pss|prov|pr|prv|eccles|ec|qoh|qoheleth|isa|is|jer|je|jr|lam|la|ezek|eze|ezk|dan|da|dn|hos|ho|joe|jl|am|obad|ob|jnh|jon|mic|nah|na|hab|zeph|zep|zp|hag|hg|zech|zec|zc|mal|ml|matt|mt|mrk|mk|mr|luk|lk|jn|jhn|ac|rom|ro|rm|(I+|\d+)\scor|(I+|\d+)\sco|gal|ga|ephes|eph|phil|php|col|(I+|\d+)\sthess|(I+|\d+)\sth|(I+|\d+)\sthes|(I+|\d+)\stim|(I+|\d+)\sti|tit|philem|phm|heb|jas|jm|(I+|\d+)\sjn|(I+|\d+)\sjhn|(I+|\d+)\spet|(I+|\d+)\spe|(I+|\d+)\spt|jud|rev|re)\.(\s\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?((\,\s?\d+)?(:\d+)?(\w)?(\-\d+)?(\w)?(:\d+)?(\w)?)*/ig, function(match) {return $scope.a(match);}));}
 	};
 })(jQuery);
-
-// http://www.biblegateway.com/passage/?search=$BIBLEREF&version=$VERSION

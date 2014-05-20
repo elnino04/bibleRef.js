@@ -69,7 +69,7 @@ You may also define the `urlSpace` attribute to specify what should be used in t
 	<script>
 		$(document).ready(function(){
 			$('body').bibleRef({
-				url: 'http://www.biblegateway.com/passage/?search=$BIBLEREF&version=$VERSION'
+				url: 'http://www.biblegateway.com/passage/?search=$BIBLEREF&version=$VERSION',
 				urlSpace: '%20'
 			});
 		});

@@ -38,6 +38,10 @@ To use configurations, pass an object containing your configurations into the `.
 	</script>
 ```
 
+####Other Online Bibles
+
+To use/contribute other online Bible configurations, check out the [wiki page](https://github.com/JoahG/bibleRef.js/wiki/Other-configurations).
+
 #####URL Format
 
 bibleRef.js allows you to specify the outputted URL format to enable you to use Bible websites other than [esvbible.org](http://esvbible.org).

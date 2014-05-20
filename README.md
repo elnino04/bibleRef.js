@@ -1,6 +1,6 @@
 #bibleRef.js
 
-Javascript script to detect Bible references and link to a website where they may be read online.
+jQuery plugin to detect Bible references and link to a website where they may be read online.
 
 ---
 
@@ -8,124 +8,147 @@ Javascript script to detect Bible references and link to a website where they ma
 
 ####Initialization
 
-To use in your project, simply link to the `bibleRef.min.js` file in your `<head>`, and define the `bibleRef` variable as an empty object to initiate bibleRef.js:
+To use bibleRef.js in your project, simply call the jQuery `.bibleRef()` method on the jQuery object which you would like searched for Bible references. The jQuery JavaScript library is a dependency of bibleRef.js, so be sure to have it defined before initiating bibleRef.js.
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
 	<script>
-		bibleRef = {};
+		$(document).ready(function(){
+			$('body').bibleRef();
+		});
 	</script>
 ```
 
 ####Configuration
 
-######`bibleRef.src`
+With its default configurations, bibleRef.js automatically detects all (non-abbreviated) references, and replaces them with their respective links to [esvbible.org](http://esvbible.org). Using the configuration options, though, enables bibleRef.js to be much more powerful.
 
-With the default configuration, the source of the Bible reference links will be to [esvbible.org](http://www.esvbible.org/). bibleRef.js is also preconfigured to also handle reference links to [biblegateway.com](http://www.biblegateway.com/) by setting `bibleRef.src` to `'biblegateway'`:
-
-```html
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
-	<script>
-		bibleRef = {
-			src: 'biblegateway'
-		};
-	</script>
-```
-
-######`bibleRef.version`
-
-The default version for the `'biblegateway'` configuration is NIV, but you are free to specify whatever verion you would like by setting the `bibleRef.version` to your desired version:
+To use configurations, pass an object containing your configurations into the `.bibleRef()` jQuery method.
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
 	<script>
-		bibleRef = {
-			src: 'biblegateway',
-			version: 'KJV'
-		};
+		$(document).ready(function(){
+			$('body').bibleRef({
+				// Configurations will live here
+			});
+		});
 	</script>
 ```
 
-######`bibleRef.target`
+#####URL Format
 
-You are also able to configure the `target` of the `<a>`s that bibleRef generates by setting `bibleRef.target` to your desired setting (the default is `'_self'`):
+bibleRef.js allows you to specify the outputted URL format to enable you to use Bible websites other than [esvbible.org](http://esvbible.org).
+
+To specify a URL format, define the `url` attribute in the object used as a parameter for bibleRef.js:
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
 	<script>
-		bibleRef = {
-			target: '_blank'
-		};
+		$(document).ready(function(){
+			$('body').bibleRef({
+				url: 'http://www.esvbible.org/$BIBLEREF'
+			});
+		});
 	</script>
 ```
 
-######`bibleRef.range`
+To customize your URL, there are two variables available in the process of creating it:
 
-`bibleRef.range` may be set to only search a specific area of a webpage. `bibleRef.range` may be set as any selector recognizable by jQuery (i.e. any combination of `id`, `class`, element name, pseudoselectors, etc.). `bibleRef.range` defaults to `body`.
+ -   `'$BIBLEREF'` returns the Bible Reference being handled. It will be URL parameterized using `urlSpace` (see below).
+ -   `'$VERSION'` returns the version set using `version` (see below).
+
+You may also define the `urlSpace` attribute to specify what should be used in the replacement of spaces in the Bible Reference when creating the URL (the default is `'+'`). For example, the configuration to use [biblegateway.com](http://biblegateway.com) with bibleRef.js would be:
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
 	<script>
-		bibleRef = {
-			range: '#myID, .myClass:first-child'
-		};
+		$(document).ready(function(){
+			$('body').bibleRef({
+				url: 'http://www.biblegateway.com/passage/?search=$BIBLEREF&version=$VERSION'
+				urlSpace: '%20'
+			});
+		});
 	</script>
 ```
 
-######`bibleRef.class`
-
-Setting `bibleRef.class` allows you to put a custom `class` on all Bible references that bibleRef replaces.
+The `url` attribute may optionally be set as a function returning the desired format. When using `url` as a function, it should accept two parameters (the same as are listed above).
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
 	<script>
-		bibleRef = {
-			class: 'myClass'
-		};
+		$(document).ready(function(){
+			$('body').bibleRef({
+				url: function($BIBLEREF, $VERSION) {
+					return 'http://www.esvbible.org/' + $BIBLEREF.replace(/\s/g, '+')
+				}
+			});
+		});
 	</script>
 ```
 
-######`bibleRef.abbr`
+#####Render Format
 
-`bibleRef.js` also supports Bible book abbreviations. For false case prevention purposes, abbreviations are turned **off** by default. To turn abbreviation searching/replacement on, set `bibleRef.abbr` to `true`. (Defaults to `false`).
+bibleRef.js also allows you to specify what format the Bible Reference should be displayed in. The desired format should be stored in the `render` attribute.
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
-	<!-- Must have jQuery library defined first -->
-	<script src="http://www.joahg.com/bibleRef.js/bibleRef.min.js" type="text/javascript"></script>
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
 	<script>
-		bibleRef = {
-			abbr: true
-		};
+		$(document).ready(function(){
+			$('body').bibleRef({
+				render: '<a data-bible-ref href="$URL" target="$TARGET" class="$CLASS">$BIBLEREF</a>'
+			});
+		});
 	</script>
 ```
 
-####Translation
+Like URL formatting, there are some variables available when using `render`:
 
-After bibleRef.js is initialized, it will search for all references in the range you provided. When it finds a reference, it will replace it with a link to the source you provided in the form:
+ -   `'$BIBLEREF'` returns the Bible Reference being handled.
+ -   `'$VERSION'` returns the version set using `version` (see below).
+ -   `'$URL'` returns the URL created with the URL Format (see above).
+ -   `'$TARGET'` returns the target set with `target` (see below).
+ -   `'$CLASS'` returns the class string set with `class` (see below).
+
+The `render` attribute may also optionally be set as a function returning the desired format. When using `render` as a function, it should accept five parameters (the same as are listed above).
 
 ```html
-	<a data-bible-ref href="...">bookName x:y</a>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+			$('body').bibleRef({
+				render: function($BIBLEREF, $VERSION, $URL, $TARGET, $CLASS) {
+					return '<a data-bible-ref href="' + $URL + '" target="' + $TARGET + '" class="' + $CLASS + '">' + $BIBLEREF + '</a>'
+				}
+			});
+		});
+	</script>
 ```
 
-Note that all Bible reference links will have the `data-bible-ref` attribute for easy targeting.
+#####Other Configuration Options
 
-If you have set a custom class with `bibleRef.class`, it will be applied to the `a`s as well:
+There are a few other configuration options available while configuring bibleRef.js. The defaults of the options, along with their defaults are listed below.
 
 ```html
-	<a data-bible-ref href="..." class="customClass">bookName x:y</a>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+			$('body').bibleRef({
+				target: '_self',  // Sets target of the rendered <a>
+				class:  '',       // Sets the class of the rendered <a>
+				version: 'ESV',   // Sets the Bible version for rendering ($VERSION)
+				abbr: false       // Turns abbreviation searching on/off
+			});
+		});
+	</script>
 ```
 
 ##Contributing

@@ -134,7 +134,7 @@ The `render` attribute may also optionally be set as a function returning the de
 
 #####Other Configuration Options
 
-There are a few other configuration options available while configuring bibleRef.js. The defaults of the options, along with their defaults are listed below.
+There are a few other configuration options available while configuring bibleRef.js. The descriptions of the options, along with their defaults are listed below.
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 

@@ -155,7 +155,7 @@ As you can see above, the `match` string defaults to `'$S$D:$D$W-$D$W:$D$W$R,$S$
  -   `'-$D'` translates to `'(\-\d+)?'` (A colon, followed by a numeral)
  -   `'$W'` translates to `'(\w)?'` (Any single word character)
  -   `'$R'` sets the beginning of a repeating section (translates to `'('`)
- -   `'$ER'` sets the end of a repeating section (translates to `')*')
+ -   `'$ER'` sets the end of a repeating section (translates to `')*'`)
  -   A comma (`','`) and a semicolon (`';'`) each translate to their respective characters, in Regex form
 
 Another popular Bible reference form, with each chapter/verse combination being separated with a semicolon (`';'`) may be matched with `'$R$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER;$ER'`.

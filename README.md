@@ -132,6 +132,34 @@ The `render` attribute may also optionally be set as a function returning the de
 	</script>
 ```
 
+#####Regex Matching
+
+You also have the option of defining the format of the matched verses with `match`. 
+
+```html
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
+	<script src="/path/to/bibleRef.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+			$('body').bibleRef({
+				match: '$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER'
+			});
+		});
+	</script>
+```
+
+As you can see above, the `match` string defaults to `'$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER'`. Each of the characters in the string translates to a different Regex string. They translate as follows:
+
+ -   `'$S$D'` translates to `'(\s\d+)?'` (A space, followed by a numeral)
+ -   `':$D'` translates to `'(:\d+)?'` (A colon, followed by a numeral)
+ -   `'-$D'` translates to `'(\-\d+)?'` (A colon, followed by a numeral)
+ -   `'$W'` translates to `'(\w)?'` (Any single word character)
+ -   `'$R'` sets the beginning of a repeating section (translates to `'('`)
+ -   `'$ER'` sets the end of a repeating section (translates to `')*')
+ -   A comma (`','`) and a semicolon (`';'`) each translate to their respective characters, in Regex form
+
+Another popular Bible reference form, with each chapter/verse combination being separated with a semicolon (`';'`) may be matched with `'$R$S$D:$D$W-$D$W:$D$W$R,$S$D:$D$W-$D$W:$D$W$ER;$ER'`.
+
 #####Other Configuration Options
 
 There are a few other configuration options available while configuring bibleRef.js. The descriptions of the options, along with their defaults are listed below.

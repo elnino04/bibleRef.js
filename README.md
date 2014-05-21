@@ -134,7 +134,7 @@ The `render` attribute may also optionally be set as a function returning the de
 
 #####Regex Matching
 
-You also have the option of defining the format of the matched verses with `match`. `match` will define the format of the *tail* of the reference (i.e. the `'3:16-17'` part of `'1 John 3:16-17'`)
+You also have the option of defining the format of the matched verses with `match`. `match` will define the format of the *tail* of the reference (i.e. the `'3:16-17'` part of `'1 John 3:16-17'`).
 
 ```html
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 

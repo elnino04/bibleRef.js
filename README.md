@@ -92,6 +92,8 @@ The `url` attribute may optionally be set as a function returning the desired fo
 	</script>
 ```
 
+To use/contribute other online Bible configurations, check out the [wiki page](https://github.com/JoahG/bibleRef.js/wiki/Other-configurations).
+
 #####Render Format
 
 bibleRef.js also allows you to specify what format the Bible Reference should be displayed in. The desired format should be stored in the `render` attribute.
@@ -178,10 +180,6 @@ There are a few other configuration options available while configuring bibleRef
 		});
 	</script>
 ```
-
-##Other Online Bibles
-
-To use/contribute other online Bible configurations, check out the [wiki page](https://github.com/JoahG/bibleRef.js/wiki/Other-configurations).
 
 ##Contributing
 
